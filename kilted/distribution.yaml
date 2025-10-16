@@ -10,6 +10,27 @@ release_platforms:
   ubuntu:
   - noble
 repositories:
+  NavMap:
+    doc:
+      type: git
+      url: https://github.com/EasyNavigation/NavMap.git
+      version: kilted
+    release:
+      packages:
+      - navmap_core
+      - navmap_examples
+      - navmap_ros
+      - navmap_ros_interfaces
+      - navmap_rviz_plugin
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/EasyNavigation/NavMap-release.git
+      version: 0.2.2-1
+    source:
+      type: git
+      url: https://github.com/EasyNavigation/NavMap.git
+      version: kilted
+    status: developed
   SMACC2:
     doc:
       type: git
@@ -57,7 +78,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ackmerann_nlmpc-release.git
-      version: 1.0.2-1
+      version: 1.0.3-1
     source:
       type: git
       url: https://git.ime.uni-luebeck.de/public-projects/asl/ackermann_nlmpc.git
@@ -102,6 +123,18 @@ repositories:
     source:
       type: git
       url: https://github.com/analogdevicesinc/iio_ros2.git
+      version: rolling
+    status: maintained
+  ads_vendor:
+    release:
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/b-robotized/ads_vendor-release.git
+      version: 1.0.2-1
+    source:
+      test_pull_requests: true
+      type: git
+      url: https://github.com/b-robotized/ads_vendor.git
       version: rolling
     status: maintained
   ai_worker:
@@ -354,7 +387,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/angles-release.git
-      version: 1.16.0-5
+      version: 1.16.1-1
     source:
       test_pull_requests: true
       type: git
@@ -1067,7 +1100,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/coal-release.git
-      version: 3.0.1-2
+      version: 3.0.2-1
     source:
       type: git
       url: https://github.com/coal-library/coal.git
@@ -1161,7 +1194,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/common_interfaces-release.git
-      version: 5.5.0-2
+      version: 5.5.1-1
     source:
       test_pull_requests: true
       type: git
@@ -1224,7 +1257,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/control_toolbox-release.git
-      version: 5.6.0-1
+      version: 5.8.1-1
     source:
       type: git
       url: https://github.com/ros-controls/control_toolbox.git
@@ -1319,7 +1352,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/demos-release.git
-      version: 0.36.1-1
+      version: 0.36.2-1
     source:
       test_pull_requests: true
       type: git
@@ -1335,7 +1368,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/luxonis/depthai-core-release.git
-      version: 3.0.5-1
+      version: 3.0.7-1
     source:
       test_pull_requests: true
       type: git
@@ -1359,7 +1392,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/luxonis/depthai-ros-release.git
-      version: 3.0.5-1
+      version: 3.0.9-1
     source:
       test_pull_requests: true
       type: git
@@ -1486,7 +1519,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/dynamixel_hardware_interface-release.git
-      version: 1.4.14-1
+      version: 1.4.16-1
     source:
       type: git
       url: https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface.git
@@ -1697,7 +1730,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/eigenpy-release.git
-      version: 3.11.0-1
+      version: 3.12.0-1
     source:
       type: git
       url: https://github.com/stack-of-tasks/eigenpy.git
@@ -1712,7 +1745,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/eiquadprog-release.git
-      version: 1.2.9-2
+      version: 1.3.0-1
     source:
       type: git
       url: https://github.com/stack-of-tasks/eiquadprog.git
@@ -1733,6 +1766,7 @@ repositories:
       - etsi_its_cam_ts_msgs
       - etsi_its_coding
       - etsi_its_conversion
+      - etsi_its_conversion_srvs
       - etsi_its_cpm_ts_coding
       - etsi_its_cpm_ts_conversion
       - etsi_its_cpm_ts_msgs
@@ -1762,7 +1796,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/etsi_its_messages-release.git
-      version: 3.3.0-1
+      version: 3.4.0-1
     source:
       type: git
       url: https://github.com/ika-rwth-aachen/etsi_its_messages.git
@@ -1888,7 +1922,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/fastcdr-release.git
-      version: 2.3.0-2
+      version: 2.3.2-1
     source:
       test_commits: false
       test_pull_requests: false
@@ -2177,19 +2211,22 @@ repositories:
       url: https://github.com/ros-drivers/four_wheel_steering_msgs.git
       version: ros2
     status: maintained
-  foxglove_bridge:
+  foxglove-sdk:
     doc:
       type: git
-      url: https://github.com/foxglove/ros-foxglove-bridge.git
+      url: https://github.com/foxglove/foxglove-sdk.git
       version: main
     release:
+      packages:
+      - foxglove_bridge
+      - foxglove_msgs
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/foxglove_bridge-release.git
-      version: 0.8.5-1
+      version: 3.2.1-1
     source:
       type: git
-      url: https://github.com/foxglove/ros-foxglove-bridge.git
+      url: https://github.com/foxglove/foxglove-sdk.git
       version: main
     status: developed
   foxglove_compressed_video_transport:
@@ -2207,21 +2244,6 @@ repositories:
       url: https://github.com/ros-misc-utilities/foxglove_compressed_video_transport.git
       version: release
     status: developed
-  foxglove_msgs:
-    doc:
-      type: git
-      url: https://github.com/foxglove/schemas.git
-      version: main
-    release:
-      tags:
-        release: release/kilted/{package}/{version}
-      url: https://github.com/ros2-gbp/ros_foxglove_msgs-release.git
-      version: 3.1.0-2
-    source:
-      type: git
-      url: https://github.com/foxglove/schemas.git
-      version: main
-    status: maintained
   fuse:
     doc:
       type: git
@@ -2441,7 +2463,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/graph_monitor-release.git
-      version: 0.1.2-1
+      version: 0.2.1-2
     source:
       type: git
       url: https://github.com/ros-tooling/graph-monitor.git
@@ -2505,6 +2527,12 @@ repositories:
     source:
       type: git
       url: https://github.com/flynneva/grbl_ros.git
+      version: main
+    status: maintained
+  greenwave_monitor:
+    source:
+      type: git
+      url: https://github.com/NVIDIA-ISAAC-ROS/greenwave_monitor.git
       version: main
     status: maintained
   grid_map:
@@ -2641,7 +2669,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/gz_gui_vendor-release.git
-      version: 0.2.1-2
+      version: 0.3.1-1
     source:
       test_pull_requests: true
       type: git
@@ -2657,7 +2685,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/gz_launch_vendor-release.git
-      version: 0.2.1-2
+      version: 0.3.1-1
     source:
       test_pull_requests: true
       type: git
@@ -2689,7 +2717,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/gz_msgs_vendor-release.git
-      version: 0.2.2-2
+      version: 0.2.4-1
     source:
       test_pull_requests: true
       type: git
@@ -2737,7 +2765,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/gz_plugin_vendor-release.git
-      version: 0.2.1-2
+      version: 0.2.3-1
     source:
       test_pull_requests: true
       type: git
@@ -2753,7 +2781,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/gz_rendering_vendor-release.git
-      version: 0.2.4-1
+      version: 0.2.5-1
     source:
       test_pull_requests: true
       type: git
@@ -2772,7 +2800,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ign_ros2_control-release.git
-      version: 2.0.11-2
+      version: 2.0.13-1
     source:
       type: git
       url: https://github.com/ros-controls/gz_ros2_control.git
@@ -2803,7 +2831,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/gz_sim_vendor-release.git
-      version: 0.2.1-2
+      version: 0.2.2-1
     source:
       test_pull_requests: true
       type: git
@@ -2835,7 +2863,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/gz_transport_vendor-release.git
-      version: 0.2.1-2
+      version: 0.2.3-1
     source:
       test_pull_requests: true
       type: git
@@ -2912,7 +2940,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/hebi_cpp_api-release.git
-      version: 3.13.1-2
+      version: 3.15.0-1
     source:
       type: git
       url: https://github.com/HebiRobotics/hebi_cpp_api_ros.git
@@ -3018,7 +3046,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/image_common-release.git
-      version: 6.1.2-1
+      version: 6.1.3-1
     source:
       test_pull_requests: true
       type: git
@@ -3138,7 +3166,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/interactive_markers-release.git
-      version: 2.7.0-2
+      version: 2.7.1-1
     source:
       test_pull_requests: true
       type: git
@@ -3224,6 +3252,21 @@ repositories:
       url: https://github.com/ros-drivers/joystick_drivers.git
       version: ros2
     status: maintained
+  jrl_cmakemodules:
+    doc:
+      type: git
+      url: https://github.com/jrl-umi3218/jrl-cmakemodules.git
+      version: master
+    release:
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/ros2-gbp/jrl_cmakemodules-release.git
+      version: 1.1.0-2
+    source:
+      type: git
+      url: https://github.com/jrl-umi3218/jrl-cmakemodules.git
+      version: master
+    status: developed
   kdl_parser:
     doc:
       type: git
@@ -3268,7 +3311,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/kinematics_interface-release.git
-      version: 2.2.0-1
+      version: 2.3.0-1
     source:
       type: git
       url: https://github.com/ros-controls/kinematics_interface.git
@@ -3349,7 +3392,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/kompass-release.git
-      version: 0.3.1-1
+      version: 0.3.2-1
     source:
       type: git
       url: https://github.com/automatika-robotics/kompass.git
@@ -3402,7 +3445,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/laser_geometry-release.git
-      version: 2.10.1-1
+      version: 2.10.2-1
     source:
       test_pull_requests: true
       type: git
@@ -3456,12 +3499,27 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/launch-release.git
-      version: 3.8.3-1
+      version: 3.8.4-1
     source:
       test_pull_requests: true
       type: git
       url: https://github.com/ros2/launch.git
       version: kilted
+    status: developed
+  launch_frontend_py:
+    doc:
+      type: git
+      url: https://github.com/ros-tooling/launch_frontend_py.git
+      version: main
+    release:
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/ros2-gbp/launch_frontend_py-release.git
+      version: 0.1.0-1
+    source:
+      type: git
+      url: https://github.com/ros-tooling/launch_frontend_py.git
+      version: main
     status: developed
   launch_param_builder:
     doc:
@@ -3491,7 +3549,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/launch_ros-release.git
-      version: 0.28.2-1
+      version: 0.28.3-1
     source:
       test_pull_requests: true
       type: git
@@ -3939,7 +3997,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ros2_message_filters-release.git
-      version: 7.1.1-1
+      version: 7.1.3-1
     source:
       test_pull_requests: true
       type: git
@@ -4083,6 +4141,7 @@ repositories:
       - mola_input_euroc_dataset
       - mola_input_kitti360_dataset
       - mola_input_kitti_dataset
+      - mola_input_lidar_bin_dataset
       - mola_input_mulran_dataset
       - mola_input_paris_luco_dataset
       - mola_input_rawlog
@@ -4100,7 +4159,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/mola-release.git
-      version: 1.9.0-1
+      version: 2.0.0-1
     source:
       type: git
       url: https://github.com/MOLAorg/mola.git
@@ -4136,6 +4195,21 @@ repositories:
       url: https://github.com/MOLAorg/mola_gnss_to_markers.git
       version: develop
     status: developed
+  mola_imu_preintegration:
+    doc:
+      type: git
+      url: https://github.com/MOLAorg/mola_imu_preintegration.git
+      version: develop
+    release:
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/ros2-gbp/mola_imu_preintegration-release.git
+      version: 1.13.1-1
+    source:
+      type: git
+      url: https://github.com/MOLAorg/mola_imu_preintegration.git
+      version: develop
+    status: developed
   mola_lidar_odometry:
     doc:
       type: git
@@ -4145,7 +4219,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/mola_lidar_odometry-release.git
-      version: 0.9.0-1
+      version: 1.0.0-1
     source:
       type: git
       url: https://github.com/MOLAorg/mola_lidar_odometry.git
@@ -4158,14 +4232,13 @@ repositories:
       version: develop
     release:
       packages:
-      - mola_imu_preintegration
       - mola_state_estimation
       - mola_state_estimation_simple
       - mola_state_estimation_smoother
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/mola_state_estimation-release.git
-      version: 1.10.0-1
+      version: 1.11.0-1
     source:
       type: git
       url: https://github.com/MOLAorg/mola_state_estimation.git
@@ -4301,6 +4374,28 @@ repositories:
       url: https://github.com/ros-planning/moveit_resources.git
       version: ros2
     status: developed
+  moveit_task_constructor:
+    doc:
+      type: git
+      url: https://github.com/moveit/moveit_task_constructor.git
+      version: ros2
+    release:
+      packages:
+      - moveit_task_constructor_capabilities
+      - moveit_task_constructor_core
+      - moveit_task_constructor_demo
+      - moveit_task_constructor_msgs
+      - moveit_task_constructor_visualization
+      - rviz_marker_tools
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/ros2-gbp/moveit_task_constructor-release.git
+      version: 0.1.4-1
+    source:
+      type: git
+      url: https://github.com/moveit/moveit_task_constructor.git
+      version: ros2
+    status: maintained
   moveit_visual_tools:
     doc:
       type: git
@@ -4325,12 +4420,27 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/mp2p_icp-release.git
-      version: 1.8.0-1
+      version: 2.0.0-1
     source:
       type: git
       url: https://github.com/MOLAorg/mp2p_icp.git
       version: develop
     status: developed
+  mp_units_vendor:
+    doc:
+      type: git
+      url: https://github.com/nobleo/mp_units_vendor.git
+      version: main
+    release:
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/ros2-gbp/mp_units_vendor-release.git
+      version: 2.4.0-1
+    source:
+      type: git
+      url: https://github.com/nobleo/mp_units_vendor.git
+      version: main
+    status: maintained
   mqtt_client:
     doc:
       type: git
@@ -4343,7 +4453,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/mqtt_client-release.git
-      version: 2.4.1-1
+      version: 2.4.1-2
     source:
       type: git
       url: https://github.com/ika-rwth-aachen/mqtt_client.git
@@ -4429,7 +4539,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/mrpt_ros-release.git
-      version: 2.14.12-1
+      version: 2.14.16-1
     source:
       type: git
       url: https://github.com/MRPT/mrpt_ros.git
@@ -4473,6 +4583,25 @@ repositories:
       url: https://github.com/KIT-MRT/mrt_cmake_modules.git
       version: master
     status: maintained
+  multisensor_calibration:
+    doc:
+      type: git
+      url: https://github.com/FraunhoferIOSB/multisensor_calibration.git
+      version: main
+    release:
+      packages:
+      - multisensor_calibration
+      - multisensor_calibration_interface
+      - small_gicp_vendor
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/ros2-gbp/multisensor_calibration-release.git
+      version: 2.0.4-1
+    source:
+      type: git
+      url: https://github.com/FraunhoferIOSB/multisensor_calibration.git
+      version: main
+    status: maintained
   mvsim:
     doc:
       type: git
@@ -4498,7 +4627,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/nanoeigenpy-release.git
-      version: 0.3.0-1
+      version: 0.4.0-1
     source:
       type: git
       url: https://github.com/Simple-Robotics/nanoeigenpy.git
@@ -4630,7 +4759,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/navigation2-release.git
-      version: 1.4.1-1
+      version: 1.4.2-1
     source:
       type: git
       url: https://github.com/ros-planning/navigation2.git
@@ -4701,7 +4830,6 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/nmea_hardware_interface-release.git
-      version: 0.0.1-5
     source:
       type: git
       url: https://github.com/OUXT-Polaris/nmea_hardware_interface.git
@@ -5162,7 +5290,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/pal_statistics-release.git
-      version: 2.6.3-1
+      version: 2.7.0-1
     source:
       type: git
       url: https://github.com/pal-robotics/pal_statistics.git
@@ -5255,6 +5383,12 @@ repositories:
       url: https://github.com/ros2/performance_test_fixture.git
       version: kilted
     status: maintained
+  persist_parameter_server:
+    source:
+      type: git
+      url: https://github.com/fujitatomoya/ros2_persist_parameter_server.git
+      version: rolling
+    status: maintained
   phidgets_drivers:
     doc:
       type: git
@@ -5343,11 +5477,21 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/pinocchio-release.git
-      version: 3.6.0-1
+      version: 3.8.0-1
     source:
       type: git
       url: https://github.com/stack-of-tasks/pinocchio.git
       version: devel
+    status: developed
+  play_motion_builder:
+    doc:
+      type: git
+      url: https://github.com/pal-robotics/play_motion_builder.git
+      version: humble-devel
+    source:
+      type: git
+      url: https://github.com/pal-robotics/play_motion_builder.git
+      version: humble-devel
     status: developed
   plotjuggler:
     doc:
@@ -5400,10 +5544,13 @@ repositories:
       url: https://github.com/ros/pluginlib.git
       version: kilted
     release:
+      packages:
+      - pluginlib
+      - ros2plugin
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/pluginlib-release.git
-      version: 5.6.0-2
+      version: 5.6.1-1
     source:
       test_pull_requests: true
       type: git
@@ -5758,7 +5905,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/python_qt_binding-release.git
-      version: 2.3.1-2
+      version: 2.3.2-1
     source:
       test_pull_requests: true
       type: git
@@ -5807,7 +5954,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/qt_gui_core-release.git
-      version: 2.9.1-1
+      version: 2.9.2-1
     source:
       test_pull_requests: true
       type: git
@@ -6002,7 +6149,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rcl-release.git
-      version: 10.1.1-1
+      version: 10.1.2-1
     source:
       test_pull_requests: true
       type: git
@@ -6140,7 +6287,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rcpputils-release.git
-      version: 2.13.4-2
+      version: 2.13.5-1
     source:
       test_pull_requests: true
       type: git
@@ -6250,16 +6397,16 @@ repositories:
     doc:
       type: git
       url: https://github.com/ros-controls/realtime_tools.git
-      version: master
+      version: kilted
     release:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/realtime_tools-release.git
-      version: 4.5.0-1
+      version: 4.7.0-1
     source:
       type: git
       url: https://github.com/ros-controls/realtime_tools.git
-      version: master
+      version: kilted
     status: maintained
   resource_retriever:
     doc:
@@ -6293,6 +6440,15 @@ repositories:
       version: master
     status: developed
   rko_lio:
+    doc:
+      type: git
+      url: https://github.com/PRBonn/rko_lio.git
+      version: master
+    release:
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/ros2-gbp/rko_lio-release.git
+      version: 0.1.6-1
     source:
       type: git
       url: https://github.com/PRBonn/rko_lio.git
@@ -6645,7 +6801,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rmw_dds_common-release.git
-      version: 3.2.1-2
+      version: 4.0.0-1
     source:
       test_pull_requests: true
       type: git
@@ -6680,7 +6836,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rmw_fastrtps-release.git
-      version: 9.3.2-2
+      version: 9.3.3-1
     source:
       test_pull_requests: true
       type: git
@@ -6734,11 +6890,17 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rmw_zenoh-release.git
-      version: 0.6.4-1
+      version: 0.6.5-1
     source:
       type: git
       url: https://github.com/ros2/rmw_zenoh.git
       version: kilted
+    status: developed
+  roadmap_explorer:
+    source:
+      type: git
+      url: https://github.com/suchetanrs/roadmap-explorer.git
+      version: main
     status: developed
   robot_calibration:
     doc:
@@ -6866,7 +7028,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ros2_control-release.git
-      version: 5.6.0-1
+      version: 5.7.0-1
     source:
       type: git
       url: https://github.com/ros-controls/ros2_control.git
@@ -6881,7 +7043,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ros2_control_cmake-release.git
-      version: 0.2.1-1
+      version: 0.3.0-1
     source:
       type: git
       url: https://github.com/ros-controls/ros2_control_cmake.git
@@ -6925,7 +7087,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ros2_controllers-release.git
-      version: 5.7.0-1
+      version: 5.8.0-1
     source:
       type: git
       url: https://github.com/ros-controls/ros2_controllers.git
@@ -6939,6 +7101,21 @@ repositories:
     source:
       type: git
       url: https://github.com/felixdivo/ros2-easy-test.git
+      version: main
+    status: developed
+  ros2_fmt_logger:
+    doc:
+      type: git
+      url: https://github.com/nobleo/ros2_fmt_logger.git
+      version: main
+    release:
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/ros2-gbp/ros2_fmt_logger-release.git
+      version: 1.0.1-1
+    source:
+      type: git
+      url: https://github.com/nobleo/ros2_fmt_logger.git
       version: main
     status: developed
   ros2_kortex:
@@ -7166,7 +7343,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ros_battery_monitoring-release.git
-      version: 1.0.2-1
+      version: 1.1.0-1
     source:
       test_pull_requests: true
       type: git
@@ -7218,7 +7395,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ros_ign-release.git
-      version: 2.1.10-1
+      version: 2.1.11-1
     source:
       test_pull_requests: true
       type: git
@@ -7530,7 +7707,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rosidl_python-release.git
-      version: 0.24.1-2
+      version: 0.24.2-1
     source:
       test_pull_requests: true
       type: git
@@ -7594,7 +7771,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release.git
-      version: 3.8.0-2
+      version: 3.8.1-1
     source:
       test_pull_requests: true
       type: git
@@ -7698,7 +7875,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rpyutils-release.git
-      version: 0.6.2-2
+      version: 0.6.3-1
     source:
       test_pull_requests: true
       type: git
@@ -7720,7 +7897,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rqt-release.git
-      version: 1.9.0-2
+      version: 1.9.1-1
     source:
       test_pull_requests: true
       type: git
@@ -7939,7 +8116,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rqt_py_console-release.git
-      version: 1.4.0-2
+      version: 1.4.1-1
     source:
       type: git
       url: https://github.com/ros-visualization/rqt_py_console.git
@@ -8090,7 +8267,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rqt_topic-release.git
-      version: 1.8.1-1
+      version: 1.8.2-1
     source:
       test_pull_requests: true
       type: git
@@ -8242,7 +8419,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/rviz-release.git
-      version: 15.0.5-1
+      version: 15.0.7-1
     source:
       test_pull_requests: true
       type: git
@@ -8516,7 +8693,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/simulation_interfaces-release.git
-      version: 1.0.0-1
+      version: 1.3.0-1
     source:
       type: git
       url: https://github.com/ros-simulation/simulation_interfaces.git
@@ -8883,7 +9060,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/teleop_twist_keyboard-release.git
-      version: 2.4.0-2
+      version: 2.4.1-1
     source:
       test_pull_requests: true
       type: git
@@ -9042,18 +9219,12 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/topic_based_hardware-release.git
-      version: 0.2.0-1
+      version: 0.2.1-1
     source:
       type: git
       url: https://github.com/ros-controls/topic_based_hardware_interfaces.git
       version: main
     status: developed
-  topic_based_ros2_control:
-    release:
-      tags:
-        release: release/kilted/{package}/{version}
-      url: https://github.com/ros2-gbp/topic_based_ros2_control-release.git
-      version: 0.2.0-3
   topic_tools:
     doc:
       type: git
@@ -9155,7 +9326,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/tsid-release.git
-      version: 1.8.0-1
+      version: 1.9.0-1
     source:
       type: git
       url: https://github.com/stack-of-tasks/tsid.git
@@ -9185,7 +9356,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/turtle_nest-release.git
-      version: 1.2.0-1
+      version: 1.2.1-1
     source:
       type: git
       url: https://github.com/Jannkar/turtle_nest.git
@@ -9464,7 +9635,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/Universal_Robots_Client_Library-release.git
-      version: 2.3.0-1
+      version: 2.4.0-1
     source:
       type: git
       url: https://github.com/UniversalRobots/Universal_Robots_Client_Library.git
@@ -9479,7 +9650,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ur_description-release.git
-      version: 4.1.0-1
+      version: 4.3.0-1
     source:
       type: git
       url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
@@ -9516,18 +9687,22 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release.git
-      version: 4.1.0-1
+      version: 4.3.0-1
     source:
       type: git
       url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git
       version: main
     status: developed
   ur_simulation_gz:
+    doc:
+      type: git
+      url: https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation.git
+      version: ros2
     release:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/ur_simulation_gz-release.git
-      version: 2.3.0-1
+      version: 2.5.0-1
     source:
       type: git
       url: https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation.git
@@ -9963,6 +10138,21 @@ repositories:
       url: https://github.com/ros/xacro.git
       version: ros2
     status: maintained
+  yaets:
+    doc:
+      type: git
+      url: https://github.com/fmrico/yaets.git
+      version: kilted
+    release:
+      tags:
+        release: release/kilted/{package}/{version}
+      url: https://github.com/fmrico/yaets-release.git
+      version: 1.0.3-1
+    source:
+      type: git
+      url: https://github.com/fmrico/yaets.git
+      version: kilted
+    status: developed
   yaml_cpp_vendor:
     release:
       tags:
@@ -9990,7 +10180,7 @@ repositories:
       tags:
         release: release/kilted/{package}/{version}
       url: https://github.com/ros2-gbp/yasmin-release.git
-      version: 3.4.0-1
+      version: 3.5.0-1
     source:
       type: git
       url: https://github.com/uleroboticsgroup/yasmin.git
